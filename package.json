@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": false,
   "dependencies": {
-    "react": ">0.1",
-    "react-native": ">0.2",
-    "react-native-vector-icons": ">2"
+    "react": ">=0.1",
+    "react-native": ">=0.2",
+    "react-native-vector-icons": ">=2.0"
   }
 }
