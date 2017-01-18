@@ -122,7 +122,7 @@ const NavigationBarRouteMapper = {
 class Navigation extends Component {
   renderScene(route, navigator) {
     this.props.expandRoute && this.props.expandRoute(route, navigator)
-    return <route.component ref={(elem) => {route.ref = elem}} navigator={navigator} {...route.passProps} />
+    return <route.component ref={(elem) => {route.ref = elem}} route={route} navigator={navigator} style={{flex: 1}} {...route.passProps} />
   }
 
   configureScene(route) {
