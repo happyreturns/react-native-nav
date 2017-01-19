@@ -12,11 +12,16 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons'
 
 class LeftButton extends Component {
+  setNativeProps(nativeProps) {
+    this._root.setNativeProps(nativeProps);
+  }
+
   render() {
     return (
       <TouchableOpacity
-        onPress={this.props.onPress}
         style={styles.navBarLeftButton}
+        ref={component => this._root = component}
+        { ...this.props }
       >
         <Icon name="ios-arrow-back" style={[styles.navBarButtonText, styles.navBarBackIcon]} />
         <Text style={[styles.navBarText, styles.navBarButtonText]}>
@@ -28,12 +33,16 @@ class LeftButton extends Component {
 }
 
 class RightButton extends Component {
+  setNativeProps(nativeProps) {
+    this._root.setNativeProps(nativeProps);
+  }
+
   render() {
     return (
       <TouchableOpacity
-        onPress={this.props.onPress}
-        disabled={this.props.disabled}
         style={styles.navBarRightButton}
+        ref={component => this._root = component}
+        { ...this.props }
       >
         <Text style={[styles.navBarText, styles.navBarButtonText, (this.props.disabled ? styles.disabled : null)]}>
           {this.props.children}
